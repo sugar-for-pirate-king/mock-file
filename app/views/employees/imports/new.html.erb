@@ -1,0 +1,9 @@
+<% flash.each do |_, value| %>
+  <%= value %>
+<% end %>
+
+<%= form_with model: @form, url: employees_imports_path, method: :post, local: true do |f| %>
+  <%= f.file_field :file %>
+  <br>
+  <%= f.submit "Submit" %>
+<% end %>
