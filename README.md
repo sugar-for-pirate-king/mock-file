@@ -1,24 +1,10 @@
-# README
+## Mock-file
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Example concept of mocking object to improve test when doing imports excel.
 
-Things you may want to cover:
+### Usage
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+$> rails db:migrate
+$> bundle exec rspec
+```
