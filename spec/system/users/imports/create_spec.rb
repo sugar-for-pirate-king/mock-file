@@ -13,7 +13,7 @@ RSpec.describe 'Import Users Spec', type: :system do
       file = Rails.root.join('spec', 'fixtures', 'files', 'users-all-valid.xlsx')
       attach_file :employee_import_form_file, file
       click_on 'Submit'
-      expect(page).to have_content '2 employees has been created'
+      expect(page).to have_content '3 employees has been created'
     end
   end
 end

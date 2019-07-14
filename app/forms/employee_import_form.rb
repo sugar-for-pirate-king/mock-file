@@ -9,6 +9,14 @@ class EmployeeImportForm
   attribute :file, default: nil
 
   def save
-    @success_message = '2 employees has been created'
+    total_created = 0
+    xlsx = Roo::Spreadsheet.open(file)
+    xlsx.parse(headers: true).each_with_index do |row, index|
+      next if index.eql?(0)
+
+      User.create(username: row['username'], age: row['age'])
+      total_created += 1
+    end
+    @success_message = "#{total_created} employees has been created"
   end
 end
